@@ -1,0 +1,30 @@
+{
+  "name": "modusversusfrontend",
+  "version": "1.0.0",
+  "description": "An example front-end project using designs from here: http://www.webdesignerdepot.com/2013/06/free-psd-template-modus-versus/",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rschiffler/ModusVersusFrontEnd.git"
+  },
+  "author": "rschiffler",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rschiffler/ModusVersusFrontEnd/issues"
+  },
+  "homepage": "https://github.com/rschiffler/ModusVersusFrontEnd#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-clean": "^0.3.2",
+    "gulp-cli": "^1.2.2",
+    "gulp-concat": "^2.6.0",
+    "gulp-hb": "^5.1.4",
+    "gulp-rename": "^1.2.2",
+    "gulp-stylus": "^2.5.0",
+    "gulp-util": "^3.0.7",
+    "gulp-webserver": "^0.9.1"
+  }
+}

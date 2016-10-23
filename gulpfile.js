@@ -4,6 +4,8 @@ var stylus = require('gulp-stylus');
 var clean = require('gulp-clean');
 var concat = require('gulp-concat');
 var hb = require('gulp-hb');
+var cleanCss = require ('gulp-clean-css');
+var sourcemaps = require('gulp-sourcemaps');
 
 var baseDir = 'src';
 var buildDir = 'build';
@@ -41,8 +43,11 @@ gulp.task('handlebars', function() {
 
 gulp.task('styles', function() {
   gulp.src(stylesDir + '/main.styl')
-    .pipe(stylus())
-    .pipe(concat('styles.css'))
+    .pipe(sourcemaps.init())
+      .pipe(stylus())
+      .pipe(concat('styles.css'))
+      .pipe(cleanCss({compatibility: 'ie8'}))
+    .pipe(sourcemaps.write())
     .pipe(gulp.dest(buildDir));
 });
 

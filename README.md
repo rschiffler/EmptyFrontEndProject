@@ -5,7 +5,7 @@ An empty front end project complete with Stylus, Gulp and Handlebars using a BEM
 1. Run ```npm install```
 1. Run ```gulp```
 
-## Styles are
+## Styles are:
 - Combined into a single file
 - Minified
 - Source mapped

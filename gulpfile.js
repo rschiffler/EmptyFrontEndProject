@@ -8,7 +8,8 @@ var sourcemaps = require('gulp-sourcemaps');
 var rev = require('gulp-rev');
 var revReplace = require("gulp-rev-replace");
 var uglify = require('gulp-uglify');
-var del = require('del')
+var del = require('del');
+var jslint = require('gulp-jslint');
 
 var baseDir = 'src';
 var buildDir = 'build';
@@ -58,7 +59,7 @@ gulp.task('images', function() {
     .pipe(gulp.dest(buildImagesDir));
 });
 
-gulp.task('js', function() {
+gulp.task('js', ['jslint'], function() {
   gulp.src(jsDir + '/*.*')
     .pipe(sourcemaps.init())
       .pipe(concat('scripts.js'))
@@ -68,6 +69,12 @@ gulp.task('js', function() {
     .pipe(gulp.dest(buildDir))
     .pipe(rev.manifest(revManifestJs, {base: buildDir}))
     .pipe(gulp.dest(buildDir));
+});
+
+gulp.task('jslint', function() {
+  return gulp.src(jsDir + '/*.*')
+    .pipe(jslint({ /* this object represents the JSLint directives being passed down */ }))
+    .pipe(jslint.reporter('default'));
 });
 
 gulp.task('cache-bust', ['html', 'styles', 'js'], function() {

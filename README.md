@@ -10,3 +10,10 @@ An empty front end project complete with Stylus, Gulp and Handlebars using a BEM
 - Minified
 - Source mapped
 - Cache busted per build
+
+## Javascript is:
+- Combined into a single file
+- Uglified/minified
+- Source mapped
+- Cache busted per build
+- Code linted

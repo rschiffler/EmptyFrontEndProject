@@ -1,4 +1,4 @@
-# EmptyFrontEndProject
+# Empty Front End Project
 An empty front end project complete with Stylus, Gulp and Handlebars using a BEM naming style.
 
 1. Clone this repo locally

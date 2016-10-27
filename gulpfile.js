@@ -55,12 +55,12 @@ gulp.task('styles', function() {
 });
 
 gulp.task('images', function() {
-  gulp.src(imagesDir + '/*.*')
+  return gulp.src(imagesDir + '/*.*')
     .pipe(gulp.dest(buildImagesDir));
 });
 
 gulp.task('js', ['jslint'], function() {
-  gulp.src(jsDir + '/*.*')
+  return gulp.src(jsDir + '/*.*')
     .pipe(sourcemaps.init())
       .pipe(concat('scripts.js'))
       .pipe(uglify())
@@ -91,7 +91,7 @@ gulp.task('cache-bust', ['html', 'styles', 'js'], function() {
 
 /* SERVE FILES */
 gulp.task('server', ['build'], function() {
-  gulp.src(buildDir)
+  return gulp.src(buildDir)
     .pipe(webserver({
       livereload: true,
       open: true

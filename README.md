@@ -12,9 +12,16 @@ An empty front end project complete with Stylus, Gulp and Handlebars using a BEM
 - Source mapped
 - Cache busted per build
 
-## Javascript is:
+## Javascript files are:
 - Combined into a single file
 - Uglified/minified
 - Source mapped
 - Cache busted per build
 - Code linted
+
+## Additions and improvements:
+- If you have a back-end project as well, add a gulp task to copy the assets from the build folder into the project
+- Replace Stylus with your preferred pre-processor like Less or Sass
+- Using bower, pull in any front-end libraries that you like to use
+- Build a custom code linting reporter to add your own javascript code standards
+- Cancel the build if the code linting fails (at the moment it just logs any issues to the console)

@@ -1,5 +1,9 @@
 # Empty Front End Project
-An empty front end project complete with Stylus, Gulp and Handlebars using a BEM naming style.
+An empty front end project complete with Stylus, Gulp and Handlebars using a BEM naming style. 
+
+This project will build, spin up a web server and open up in the browser. As you make changes to the source files, the project will rebuild and the browser tab will automatically refresh.
+
+Follow the instructions below to get started:
 
 1. Fork this repo for a new project
 1. Run ```npm install```

@@ -26,7 +26,7 @@ var revManifestJs = buildDir + '/rev-manifest-js.json';
 gulp.task('default', ['build', 'server'], function() { });
 
 /* BUILD ALL FILES */
-gulp.task('build', ['clean', 'html', 'styles', 'js', 'cache-bust', 'images']);
+gulp.task('build', ['clean', 'html', 'styles', 'js', 'cache-bust', 'images', 'clean-manifest']);
 
 gulp.task('clean', function() {
   return del(buildDir + '/**/*');
@@ -86,6 +86,10 @@ gulp.task('cache-bust', ['html', 'styles', 'js'], function() {
     .pipe(gulp.dest(buildDir))
     .pipe(revReplace({manifest: manifestJs}))
     .pipe(gulp.dest(buildDir));
+});
+
+gulp.task('clean-manifest', ['cache-bust'], function() {
+  return del(buildDir + '/rev-manifest-*.json');
 });
 /* END BUILD FILES */
 
